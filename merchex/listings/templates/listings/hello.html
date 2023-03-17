@@ -6,11 +6,12 @@
     </head>
     <body>
         <h1>Hello Django!</h1>
-        <p>My favourite bands are:</p>
+        <h2>My favourite bands are:</h2>
+        <p>I have {{bands|length}} favorite bands.</p>
         <ul>    
             
             {% for band in bands %}
-               <li> {{band.name}},</li>
+               <li> {{band.name|upper}},</li>
             {% endfor %} 
             
             

@@ -1,0 +1,14 @@
+
+
+<html>
+    <head><title>Merchex</title></head>
+    <body>
+        <h1>Hello Django!</h1>
+        <p>My favourite bands titles are:</p>
+        <ul>
+            {% for Title in titles %}
+                <li>{{Title.title}},</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
