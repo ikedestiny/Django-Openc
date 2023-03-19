@@ -8,8 +8,11 @@ def Hello(request):
     return render(request,'listings/hello.html',{'bands':bands})
 
 def about(request):
-    return HttpResponse('<h1>About-us</h1>  <p>We Love Merch!!</p>')
+    return render(request, 'listings/about.html')
 
 def goods(request):
     titles = band_title.objects.all()
     return render(request,'listings/goods.html',{'titles':titles})
+
+def products(request):
+    return render(request, 'listings/products.html')

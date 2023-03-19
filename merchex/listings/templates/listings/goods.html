@@ -1,8 +1,6 @@
+{% extends 'listings/base.html' %}
 
-
-<html>
-    <head><title>Merchex</title></head>
-    <body>
+    {% block content %}
         <h1>Hello Django!</h1>
         <p>My favourite bands titles are:</p>
         <ul>
@@ -10,5 +8,4 @@
                 <li>{{Title.title}},</li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+    {% endblock %}
