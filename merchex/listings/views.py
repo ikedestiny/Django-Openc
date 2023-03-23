@@ -2,10 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from listings.models import band , band_title
 
-def Hello(request):
+def band_list(request):
     bands = band.objects.all()
     
-    return render(request,'listings/hello.html',{'bands':bands})
+    return render(request,'listings/band_list.html',{'bands':bands})
+
+def band_detail(request, id):
+    bands = band.objects.get(id=id)
+    return render(request, 'listings/band_detail.html', {'bands':bands})
 
 def about(request):
     return render(request, 'listings/about.html')

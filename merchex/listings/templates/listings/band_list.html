@@ -2,13 +2,12 @@
 
 {% block content %}
 
-        <h1>Hello Django!</h1>
-        <h2>My favourite bands are:</h2>
-        <p>I have {{bands|length}} favorite bands.</p>
+        <h1>Band</h1>
+        
         <ul>    
             
             {% for band in bands %}
-               <li> {{band.name|upper}},</li>
+               <li> {{band.name|upper}}</li>
             {% endfor %} 
             
             
