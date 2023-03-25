@@ -1,0 +1,17 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<p>We are here to help</p>
+<form action="" method="post" novalidate>
+     {% csrf_token %} 
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
+
+
+
+
+
+

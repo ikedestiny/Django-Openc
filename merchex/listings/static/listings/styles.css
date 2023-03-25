@@ -2,4 +2,19 @@
     background: rgb(212, 226, 233);
     
 }
+button {
+    color:brown;
+
+    background-color: white;
+}
+
+
+.errorlist { margin-bottom: -10px }
+
+
+ul {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 0;
+  }
 

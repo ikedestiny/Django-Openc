@@ -6,7 +6,21 @@
     </head>
        
     <body>
-
+        <nav>
+            <a href="{% url 'band-list' %}"><button>Bands</button></a>
+        </nav>
+        <nav>
+            <a href="{% url 'Listings-list' %}"><button>Listings</button></a>
+        </nav>
+        <nav>
+            <a href="{% url 'our-products' %}" ><button>Our Products</button></a>
+        </nav>
+        <nav>
+            <a href="{% url 'contact-form' %}" ><button>Contact Us</button></a>
+        </nav>
+        <nav>
+            <a href="{% url 'create-band' %}" ><button>Add Bands</button></a>
+        </nav>
         {% block content %}{% endblock  %} 
 
     </body>

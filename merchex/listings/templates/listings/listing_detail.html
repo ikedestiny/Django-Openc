@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h2> {{ listings.description }}</h2>
+    <ul>
+        <li>Description: {{listings.description}}</li>
+        <li>Sold: {{listings.sold|yesno}}</li>
+        <li>Year: {{listings.year}}</li>
+        <li>Type: {{listings.get_type_display}}</li>
+        
+    </ul>
+    <a href="{% url 'Listings-list' %}">Back to all Lists</a>
+    
+{% endblock %}
