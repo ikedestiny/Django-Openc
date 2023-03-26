@@ -29,5 +29,9 @@ urlpatterns = [
     path('contact-us/', views.contact, name="contact-form"),
     path('emailSent/', views.emailSent, name="email-sent"),
     path('bands/add/', views.create_band, name="create-band"),
-    path('listings/add', views.create_listing, name="create-listing")
+    path('listings/add', views.create_listing, name="create-listing"),
+    path('bands/<int:id>/update/',views.update_band, name="update-band"),
+    path('listings/<int:id>/update/',views.update_listing, name="update-listing"),
+    path('bands/<int:id>/delete/',views.delete_band,name="delete-band"),
+    path('listings/<int:id>/delete', views.delete_listing, name="delete-listing")
 ]

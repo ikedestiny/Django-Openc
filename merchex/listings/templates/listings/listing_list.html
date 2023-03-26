@@ -7,7 +7,10 @@
         <ul>    
             
             {% for listing in listings %}
-               <li> <a href="{% url 'listing-detail' listing.id %}">{{listing.description|upper}}</a></li>
+               <li> <a href="{% url 'listing-detail' listing.id %}">{{listing.description|upper}}</a>
+                    <a href="{% url 'update-listing' listing.id %}">[EDIT]</a>
+                    <a href="{% url 'delete-listing' listing.id %}">Delete:{{listing.description}}</a>
+                </li>
             {% endfor %} 
             
             

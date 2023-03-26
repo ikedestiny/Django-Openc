@@ -10,5 +10,7 @@
         
     </ul>
     <a href="{% url 'Listings-list' %}">Back to all Lists</a>
+    <a href="{% url 'update-listing' listings.id %}">Update Listing</a>
+    <a href="{% url 'delete-listing' listings.id %}">[DELETE]</a>
     
 {% endblock %}

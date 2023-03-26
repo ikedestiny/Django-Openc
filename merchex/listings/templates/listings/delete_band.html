@@ -1,0 +1,10 @@
+{% extends "listings/base.html" %}
+{% block content %}
+<h1>Are you SURE you want to delete the band?: {{ bands.name|upper }}</h1>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

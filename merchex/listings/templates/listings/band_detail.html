@@ -12,4 +12,7 @@
     </ul>
     <p>{{bands.biography}}</p>
         <a href="{% url "band-list" %}">Back to all Bands</a>
+        <a href="{% url 'update-band' bands.id %}">Update Band</a>
+        <a href="{% url 'delete-band' bands.id %}">Delete</a>
+        
 {% endblock %}

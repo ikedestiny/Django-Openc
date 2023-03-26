@@ -79,4 +79,49 @@ def create_listing(request):
     else:
         form = ListingForm()
     return render(request, 'listings/create_listing.html', {'form':form})
+def update_band(request,id):
+    bands = band.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = BandForm(request.POST,instance=bands)
+        if form.is_valid():
+            #update the existing band in the database
+            form.save()
+            #REDIRECT to the datapage of the form we just updated
+            return redirect('band-detail', band.id)
+        
+    else:
+        form = BandForm(instance=bands)
+        
+    return render(request, 'listings/update_band.html', {'form':form})
+
+def update_listing(request,id):
+    listings = Listing.objects.get(id=id)
+    if request.method == 'POST':
+        form = ListingForm(request.POST, instance=listings)
+        if form.is_valid():
+            form.save()
+            return redirect('listing-detail', listings.id)
+        
+    else:
+        form = ListingForm(instance=listings)
+    return render(request, 'listings/update_listing.html', {'form':form})
+def delete_band(request, id):
+    bands = band.objects.get(id=id)
+    if request.method == "POST":
+        #delete the band from the database
+        bands.delete()
+        #redirect to the bands list
+        return redirect('band-list')
+    #no need for an 'else' here. if its a get request, just continue.
+    return render(request, 'listings/delete_band.html', {'bands':bands})
+
+def delete_listing(request,id):
+    listings = Listing.objects.get(id=id)
+    if request.method == "POST":
+        listings.delete()
+        return redirect('Listings-list')
+    
+    return render(request, 'listings/delete_listing.html', {'listings':listings})
+    
     
